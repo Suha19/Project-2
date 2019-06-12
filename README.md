@@ -34,13 +34,15 @@ Technologies Used
 - Google Fonts
 - Rubber Duckie 
 
-
+<!-- 
 Project board
-Link to your project board on Github - there should be an overview of the features and some user stories assigned to various team members
+Link to your project board on Github - there should be an overview of the features and some user stories assigned to various team members -->
 Database Diagram
-Link to your database diagram (Check out this tool https://dbdiagram.io/d)
+<img width="1280" alt="database_structure" src="https://user-images.githubusercontent.com/46722789/59324167-554a4780-8ca3-11e9-913c-17fe1767ddaa.png">
+
+<!-- Link to your database diagram (Check out this tool https://dbdiagram.io/d)
 Its ok to screenshot it or share a link from a tool like above
-THE POINT OF THIS IS TO PLAN YOUR DATABASE
+THE POINT OF THIS IS TO PLAN YOUR DATABASE -->
 
 <!-- 
 Name of App is WikiFoodia
@@ -57,3 +59,4 @@ Name of App is WikiFoodia
 - description would be plain text
 
  -->
+
