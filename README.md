@@ -7,18 +7,15 @@ The application is geared towards healthy food option of a variety of cuisines.
 Developers
 [Suha Alobaidi](https://github.com/Suha19)
 <!-- Role -->
-Any other summary details about the developer you wish to provide
 [Juan Delgado](https://github.com/sebasdelgado24)
+<!-- Any other summary details about the developer you wish to provide -->
 <!-- Role -->
-Any other summary details about the developer you wish to provide
 [Tori Olley](https://github.com/ToriFortune)
+<!-- Any other summary details about the developer you wish to provide -->
 <!-- Role -->
-Any other summary details about the developer you wish to provide
-
-
-Any other summary details about the developer you wish to provide
-Techstack
-Technologies Used
+<!-- Any other summary details about the developer you wish to provide -->
+<!-- Techstack -->
+Technologies Used:
 - HTML
 - CSS
 - JavaScript
