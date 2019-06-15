@@ -1,0 +1,6 @@
+INSERT INTO users (user_name, email, password) VALUES ("Tori", "tori@hotmail.com", "123qwe");
+INSERT INTO recipe_type (meal_type) VALUES ("Breakfast"), ("Lunch"), ("Dinner");
+INSERT INTO recipe (name_of_meal, descriptions, ingredients, prep_time, caloric_content, servings, cooking_instructions, user_id, recipe_type_id) VALUES ("Heather's Grilled Salmon", "An easy delicious way to grill salmon. This also reheats nicely for lunches the next day!", "1/4 cup brown sugar, 1/4 cup olive oil, 1/4 cup soy sauce, 2 teaspoons lemon pepper, 1 teaspoon dried thyme, 1 teaspoon dried basil, 1 teaspoon dried parsley, 1/2 teaspoon garlic powder, 4 (6 ounce) salmon fillets", "10 m", "380 calories", "4 servings", "Whisk together the brown sugar, olive oil, soy sauce, lemon pepper, thyme, basil, parsley, and garlic powder in a bowl, and pour into a resealable plastic bag. Add the salmon fillets, coat with the marinade, squeeze out excess air, and seal the bag. Marinate in the refrigerator for at least 1 hour, turning occasionally.
+Preheat an outdoor grill for medium heat, and lightly oil the grate. Remove the salmon from the marinade, and shake off excess. Discard the remaining marinade.
+Grill the salmon on the preheated grill until browned and the fish flakes easily with a fork, about 5 minutes on each side.", 1, 3);
+   
