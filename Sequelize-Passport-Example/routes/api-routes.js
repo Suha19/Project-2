@@ -19,6 +19,7 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password
     }).then(function() {
@@ -26,7 +27,7 @@ module.exports = function(app) {
     }).catch(function(err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
+      res.status(422).json(err.errors[0].message);
     });
   });
 
