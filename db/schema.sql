@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS wikifoodia;
 CREATE DATABASE wikifoodia;
 USE wikifoodia;
 -- create tables with primary key that auto increases
+--new comment
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
     user_name VARCHAR (50)NOT NULL,
