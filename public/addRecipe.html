@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+
+	<!-- Basic Page Needs -->
+	<meta charset="utf-8">
+	<title>Be</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="content/dietitian2/images/favicon.ico">
+
+	<!-- FONTS -->
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,700,700italic'>
+	<link rel='stylesheet'
+		href='http://fonts.googleapis.com/css?family=Arima+Madurai:100,300,400,400italic,500,700,700italic'>
+
+	<!-- CSS -->
+	<link rel='stylesheet' href='css/global.css'>
+	<link rel='stylesheet' href='content/dietitian2/css/structure.css'>
+	<link rel='stylesheet' href='content/dietitian2/css/dietitian2.css'>
+	<link rel='stylesheet' href='content/dietitian2/css/custom.css'>
+
+	<!-- Revolution Slider -->
+	<link rel="stylesheet" href="plugins/rs-plugin/css/settings.css">
+
+</head>
+
+<body>
+	<div id="Subheader">
+		<div class="container">
+			<div class="column one">
+				<h1 class="title">Recipes</h1>
+				<!--BreadCrumbs area-->
+				<ul class="breadcrumbs">
+					<li>
+						<a href="home.html">Home</a><span><i class="icon-right-open"></i></span>
+					</li>
+					<li>
+						<a href="recipe.html">Recipes</a><i class="icon-right-open"></i></span>
+					</li>
+					<li>
+						<a href="chefs.html">Chefs</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="section mcb-section" id="Contact" style="padding-top:0px; padding-bottom:40px" data-id="#Contact">
+		<div class="section_wrapper mcb-section-inner">
+			<div class="wrap mcb-wrap one valign-top clearfix">
+				<div class="mcb-wrap-inner">
+					<div class="column mcb-column one column_column">
+						<div class="column_attr clearfix align_center animate fadeIn" data-anim-type="fadeIn"
+							style=" background-color:#ecfafc; padding:80px 15% 40px; border-radius: 8px">
+							<h4 class="themecolor" style="margin-bottom: 6px">Contact me</h4>
+							<h2>Send your recipe</h2>
+							<hr class="no_line" style="margin: 0 auto 20px">
+							<div id="contactWrapper">
+								<form id="contactform">
+									<!-- One Second (1/2) Column -->
+									<div class="column one">
+										<input placeholder="Recipe name" type="text" name="name" id="name" size="40" aria-required="true"
+											aria-invalid="false">
+									</div>
+									<!-- One Second (1/2) Column -->
+									<div class="column one">
+										<input placeholder="Recipe descriptions" type="text" name="descrip" id="descrip" size="40"
+											aria-required="true" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Ingredients" type="text" name="ingrdts" id="ingrdts" size="40"
+											aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Prepation time" type="text" name="prepT" id="prepT" size="40"
+											aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Caloric content" type="text" name="calor" id="calor" size="40"
+											aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Servings" type="text" name="serv" id="serv" size="40" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<textarea placeholder="Cooking instructions" name="cookInstruct" id="cookInstruct"
+											style="width:100%;" rows="10" aria-invalid="false"></textarea>
+									</div>
+									<label for="avatar">Recipe Picture</label>
+
+									<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+
+									<div class="column one">
+										<input type="button" value="Add Recipe" id="add" onclick="return check_values()">
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	</div>
+	<!-- Custom Script -->
+	<script src="js/cms.js" type="text/javascript"></script>
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"
+></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: 'AIzaSyD1eQ_WynFVYSJT8KQNJGcdcHMiyHGZ3Js',
+		authDomain: 'wikifoodia-9db75.firebaseapp.com',
+		databaseURL: 'https://wikifoodia-9db75.firebaseio.com',
+		projectId: 'wikifoodia-9db75',
+		storageBucket: 'wikifoodia-9db75.appspot.com',
+		messagingSenderId: '453612776643',
+		appId: '1:453612776643:web:b32284782eede345'
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	var storage = firebase.storage();
+	$(document).ready(function() {
+		$('input').on('change', function(event) {
+			const file = event.target.files[0];
+			const fileName = file.name;
+			const storageRef = storage.ref(`/${fileName}`);
+			storageRef.put(file).then(function(snapshot) {
+				console.log(snapshot.val());
+			});
+		});
+	});
+</script>
+
+</body>
+
+</html>
