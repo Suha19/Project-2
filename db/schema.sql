@@ -10,7 +10,7 @@ CREATE TABLE users (
     primary KEY(id)
     );
     
-    CREATE TABLE recipe_type(
+CREATE TABLE recipe_type(
     id INT NOT NULL AUTO_INCREMENT,
     meal_type VARCHAR (50),
 	primary KEY(id)

@@ -38,7 +38,7 @@ module.exports = function(app) {
   });
 
   // recipe route for saving a new recipe
-  app.recipe("/api/recipes", function(req, res) {
+  app.get("/api/recipes", function(req, res) {
     db.recipes.create(req.body).then(function(dbrecipe) {
       res.json(dbrecipe);
     });
