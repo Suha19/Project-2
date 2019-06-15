@@ -13,15 +13,15 @@ module.exports = function (sequelize, DataTypes) {
   });
   console.log(recipes)
 
-  recipes.associate = function (models) {
-    // We're saying that a recipes should belong to an chef
-    // A recipes can't be created without an chef due to the foreign key constraint
-    recipes.belongsTo(models.chef, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // recipes.associate = function (models) {
+  //   // We're saying that a recipes should belong to an chef
+  //   // A recipes can't be created without an chef due to the foreign key constraint
+  //   recipes.belongsTo(models.chef, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return recipes;
 };

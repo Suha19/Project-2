@@ -4,8 +4,12 @@ var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
 var basename = path.basename(module.filename);
-var env = process.env.NODE_ENV || "development";
+var env = process.env.NODE_ENV || "development"
 var config = require(__dirname + "/../config/config.json")[env];
+if (env === "development" && process.env.dbpassword)
+{
+  config.password = process.env.dbpassword
+} 
 var db = {};
 
 if (config.use_env_variable) {
