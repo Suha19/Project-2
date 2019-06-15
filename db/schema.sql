@@ -9,27 +9,27 @@ CREATE TABLE users (
     password VARCHAR(50) NOT NULL,
     primary KEY(id)
     );
-CREATE TABLE recipe(
-    id INT NOT NULL AUTO_INCREMENT,
-    recipe_type_id INT NOT NULL AUTO_INCREMENT,
-    name_of_meal VARCHAR(100),
-    descriptions VARCHAR (1000),
-    ingredients VARCHAR (800), 
-    prep_time VARCHAR(30),
-    caloric_content INT,
-    cooking_instructions VARCHAR(1000),
-    servings INT,
-    meal_images VARCHAR (200),
-    user_id VARCHAR (100),
-       primary KEY(id)
-);
-CREATE TABLE ingredients(
-    id INT NOT NULL AUTO_INCREMENT,
-    item_name VARCHAR (50),
-       primary KEY(id)
-);
+    
 CREATE TABLE recipe_type(
     id INT NOT NULL AUTO_INCREMENT,
     meal_type VARCHAR (50),
 	primary KEY(id)
     );
+    
+CREATE TABLE recipe(
+    id INT NOT NULL AUTO_INCREMENT,
+    name_of_meal VARCHAR(100),
+    descriptions VARCHAR (1000),
+    ingredients VARCHAR (1000), 
+    prep_time VARCHAR(100),
+    caloric_content VARCHAR(100),
+    servings VARCHAR(100),
+    cooking_instructions VARCHAR(1000),
+    meal_images VARCHAR (200),
+    user_id INT,
+	recipe_type_id INT,
+	PRIMARY KEY(id),
+	FOREIGN KEY (user_id) REFERENCES users (id),
+	FOREIGN KEY (recipe_type_id) REFERENCES recipe_type (id)
+	
+);
