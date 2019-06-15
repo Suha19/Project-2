@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const passportJWT = require('passport-jwt');
 var db = require("./models");
-var PORT = 3000;
+var PORT = process.env.PORT || 7000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
