@@ -11,7 +11,7 @@
 
 	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
-	<title>Be</title>
+	<title>WikiFoodia<i class="far fa-hat-chef"></i></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -51,10 +51,10 @@
 						<a href="home.html">Home</a><span><i class="icon-right-open"></i></span>
 					</li>
 					<li>
-						<a href="recipe.html">Recipes</a><i class="icon-right-open"></i></span>
+						<a href="recipe.html">All Recipes</a><i class="icon-right-open"></i></span>
 					</li>
 					<li>
-						<a href="chefs.html">Chefs</a>
+						<a href="chefs.html">Add Recipe</a>
 					</li>
 				</ul>
 			</div>
@@ -67,48 +67,55 @@
 					<div class="column mcb-column one column_column">
 						<div class="column_attr clearfix align_center animate fadeIn" data-anim-type="fadeIn"
 							style=" background-color:#ecfafc; padding:80px 15% 40px; border-radius: 8px">
-							<h4 class="themecolor" style="margin-bottom: 6px">Contact me</h4>
 							<h2>Send your recipe</h2>
 							<hr class="no_line" style="margin: 0 auto 20px">
 							<div id="contactWrapper">
 								<form id="contactform">
+
 									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Recipe name" type="text" name="name" id="name" size="40" aria-required="true"
-											aria-invalid="false">
-									</div>
-									<!-- One Second (1/2) Column -->
-									<div class="column one">
-										<input placeholder="Recipe descriptions" type="text" name="descrip" id="descrip" size="40"
+										<input placeholder="Recipe name" type="text" name="name" id="name" size="40"
 											aria-required="true" aria-invalid="false">
 									</div>
+									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Ingredients" type="text" name="ingrdts" id="ingrdts" size="40"
+										<input placeholder="Recipe descriptions" type="text" name="descrip" id="descrip"
+											size="40" aria-required="true" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Ingredients" type="text" name="ingrdts" id="ingrdts"
+											size="40" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Prepation time" type="text" name="prepT" id="prepT"
+											size="40" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Caloric content" type="text" name="calor" id="calor"
+											size="40" aria-invalid="false">
+									</div>
+									<div class="column one">
+										<input placeholder="Servings" type="text" name="serv" id="serv" size="40"
 											aria-invalid="false">
 									</div>
 									<div class="column one">
-										<input placeholder="Prepation time" type="text" name="prepT" id="prepT" size="40"
-											aria-invalid="false">
+										<textarea placeholder="Cooking instructions" name="cookInstruct"
+											id="cookInstruct" style="width:100%;" rows="10"
+											aria-invalid="false"></textarea>
 									</div>
-									<div class="column one">
-										<input placeholder="Caloric content" type="text" name="calor" id="calor" size="40"
-											aria-invalid="false">
-									</div>
-									<div class="column one">
-										<input placeholder="Servings" type="text" name="serv" id="serv" size="40" aria-invalid="false">
-									</div>
-									<div class="column one">
-										<textarea placeholder="Cooking instructions" name="cookInstruct" id="cookInstruct"
-											style="width:100%;" rows="10" aria-invalid="false"></textarea>
-									</div>
-									<label for="avatar">Recipe Picture</label>
-
+									<!-- <label for="avatar">Add Meal Image:</label> -->
 									<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-
 									<div class="column one">
-										<input type="button" value="Add Recipe" id="add" onclick="return check_values()">
+										<label for="mealType">Select Meal Type:</label>
+										<select class="custom-select" id="mealType">
+											<option value="breakfast">Breakfast</option>
+											<option value="lunch">Lunch</option>
+											<option value="dinner">Dinner</option>
+										</select>
 									</div>
-
+									<br />
+									<br />
+									<button type="submit" class="btn btn-success submit btn-lg">Submit</button>
 								</form>
 							</div>
 						</div>
@@ -117,48 +124,44 @@
 			</div>
 		</div>
 	</div>
-
 	</div>
 	</div>
 	<!-- Custom Script -->
 	<script src="js/cms.js" type="text/javascript"></script>
-	<script
-	src="https://code.jquery.com/jquery-3.4.1.min.js"
-	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	crossorigin="anonymous"
-></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+	<!-- TODO: Add SDKs for Firebase products that you want to use
 https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
-	// Your web app's Firebase configuration
-	var firebaseConfig = {
-		apiKey: 'AIzaSyD1eQ_WynFVYSJT8KQNJGcdcHMiyHGZ3Js',
-		authDomain: 'wikifoodia-9db75.firebaseapp.com',
-		databaseURL: 'https://wikifoodia-9db75.firebaseio.com',
-		projectId: 'wikifoodia-9db75',
-		storageBucket: 'wikifoodia-9db75.appspot.com',
-		messagingSenderId: '453612776643',
-		appId: '1:453612776643:web:b32284782eede345'
-	};
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	var storage = firebase.storage();
-	$(document).ready(function() {
-		$('input').on('change', function(event) {
-			const file = event.target.files[0];
-			const fileName = file.name;
-			const storageRef = storage.ref(`/${fileName}`);
-			storageRef.put(file).then(function(snapshot) {
-				console.log(snapshot.val());
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: 'AIzaSyD1eQ_WynFVYSJT8KQNJGcdcHMiyHGZ3Js',
+			authDomain: 'wikifoodia-9db75.firebaseapp.com',
+			databaseURL: 'https://wikifoodia-9db75.firebaseio.com',
+			projectId: 'wikifoodia-9db75',
+			storageBucket: 'wikifoodia-9db75.appspot.com',
+			messagingSenderId: '453612776643',
+			appId: '1:453612776643:web:b32284782eede345'
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var storage = firebase.storage();
+		$(document).ready(function () {
+			$('input').on('change', function (event) {
+				const file = event.target.files[0];
+				const fileName = file.name;
+				const storageRef = storage.ref(`/${fileName}`);
+				storageRef.put(file).then(function (snapshot) {
+					console.log(snapshot.val());
+				});
 			});
 		});
-	});
-</script>
+	</script>
 
 </body>
 
