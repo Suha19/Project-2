@@ -11,22 +11,17 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/recipes.html"));
-  });
-
-  // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   // recipe route loads recipe.html
-  app.get("/recipe", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/recipes.html"));
+  app.get("/allrecipe", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/allrecipes.html"));
   });
 
-  // chef route loads chef-manager.html
-  app.get("/chef", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/chefs.html"));
+  // cms route loads cms.html
+  app.get("/addRecipe", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/addRecipe.html"));
   });
 
 };
