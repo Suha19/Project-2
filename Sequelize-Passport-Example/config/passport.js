@@ -18,6 +18,7 @@ passport.use(new LocalStrategy(
     }).then(function(dbUser) {
       // If there's no user with the given email
       if (!dbUser) {
+        console.log('test');
         return done(null, false, {
           message: "Incorrect email."
         });
