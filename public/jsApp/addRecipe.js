@@ -8,9 +8,16 @@ $(document).ready(function() {
   // If we have this section in our url, we pull out the recipe id from the url
   
   if (url.indexOf("?recipe_id=") !== -1) {
-    recipeID = url.split("=")[1];
-    getRecData(recipeID);
+    recipeId = url.split("=")[1];
+    getRecipeData(recipeId, "recipe");
   }
+  // Otherwise if we have an user_id in our url, preset the user select box to be our user
+  else if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
+  }
+
+  // Getting the users, and their recipes
+  getUsers();
 
   // Getting jQuery references to the recipe recName, recDescrip, form, and category select
   var recName = $("#recName");
@@ -20,7 +27,7 @@ $(document).ready(function() {
   var servings = $("#servings");
   var ingredients = $("#ingredients");
   var cookInstruct = $("#cookInstruct");
- 
+  var userSelect = $("#user");
   var mealType = $("#mealType");
   // Giving the mealType a default value
   mealType.val("");
@@ -29,7 +36,7 @@ $(document).ready(function() {
     event.preventDefault();
     // Wont submit the recipe if we are missing a recName or a recDescrip
     if (!recName.val().trim() || !recDescrip.val().trim() || !prep_time.val().trim() || !caloric_content.val().trim() || 
-    !servings.val().trim() || !ingredients.val().trim() || !cookInstruct.val().trim()) {
+    !servings.val().trim() || !ingredients.val().trim() || !cookInstruct.val().trim() || !userSelect.val()) {
       return;
     }
     // Constructing a newRecipe object to hand to the database
@@ -42,7 +49,8 @@ $(document).ready(function() {
       servings: servings.val().trim(),
       ingredients: ingredients.val().trim(),
       cookInstruct: cookInstruct.val().trim(),
-      category: mealType.val()
+      category: mealType.val(),
+      userID: userSelect.val()
     };
 
     console.log(newRecipe);
@@ -66,9 +74,21 @@ $(document).ready(function() {
   }
 
   // Gets recipe data for a recipe if we're editing
-  function getRecData(id) {
+  // function getRecData(id) {
+  //   var queryUrl;
+  //   switch (type) {
+  //   case "recipe":
+  //     queryUrl = "/api/recipes/" + id;
+  //     break;
+  //   case "user":
+  //     queryUrl = "/api/users/" + id;
+  //     break;
+  //   default:
+  //     return;
+  //   }
     $.get("/api/recipes/" + id, function(data) {
       if (data) {
+        console.log(data.userID || data.id);
         // If this recipe exists, prefill our addRecipe forms with its data
         
         recName.val(data.recName);
@@ -79,12 +99,33 @@ $(document).ready(function() {
         ingredients.val(data.ingredients);
         cookInstruct.val(data.cookInstruct);
         mealType.val(data.category);
+        userID = data.userID || data.id;
         // If we have a recipe with this id, set a flag for us to know to update the recipe
         // when we hit submit
         updating = true;
       }
     });
+  
+
+  function getUsers() {
+    $.get("/api/users", renderUserList);
   }
+
+  // function renderUserList(data) {
+  //   if (!data.length) {
+  //     window.location.href = "/signup";
+  //   }
+  //   $(".hidden").removeClass("hidden");
+  //   var rowsToAdd = [];
+  //   for (var i = 0; i < data.length; i++) {
+  //     rowsToAdd.push(createUserRow(data[i]));
+  //   }
+  //   userSelect.empty();
+  //   console.log(rowsToAdd);
+  //   console.log(userSelect);
+  //   userSelect.append(rowsToAdd);
+  //   userSelect.val(userID);
+  // }
 
   // Update a given recipe, bring user to the blog page when done
   function updateRecipe(recipe) {
