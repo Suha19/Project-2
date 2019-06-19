@@ -44,7 +44,7 @@
 	<div id="Subheader">
 		<div class="container">
 			<div class="column one">
-				<h1 class="title">Recipes</h1>
+				<!-- <h1 class="title">Recipes</h1> -->
 				<!--BreadCrumbs area-->
 				<ul class="breadcrumbs">
 					<li>
@@ -60,6 +60,22 @@
 			</div>
 		</div>
 	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+			<a class="navbar-brand" href="/logout">
+			  Logout
+			</a>
+		  </div>
+		</div>
+	  </nav>
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h2>Welcome <span class="member-name"></span></h2>
+			</div>
+		  </div>
+		</div>
 	<div class="section mcb-section" id="Contact" style="padding-top:0px; padding-bottom:40px" data-id="#Contact">
 		<div class="section_wrapper mcb-section-inner">
 			<div class="wrap mcb-wrap one valign-top clearfix">
@@ -70,33 +86,33 @@
 							<h2>Send your recipe</h2>
 							<hr class="no_line" style="margin: 0 auto 20px">
 							<div id="contactWrapper">
-								<form id="contactform">
+								<form id="contactform" enctype="multipart/form-data">
 
-									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Recipe name" type="text" name="name" id="name" size="40"
+										<input placeholder="Recipe name" type="text" name="recName" id="recName" size="40"
 											aria-required="true" aria-invalid="false">
 									</div>
-									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Recipe descriptions" type="text" name="descrip" id="descrip"
+										<input placeholder="Recipe descriptions" type="text" name="recDescrip" id="recDescrip"
 											size="40" aria-required="true" aria-invalid="false">
 									</div>
+									
 									<div class="column one">
-										<input placeholder="Ingredients" type="text" name="ingrdts" id="ingrdts"
+										<input placeholder="Prepation time" type="text" name="prep_time" id="prep_time"
 											size="40" aria-invalid="false">
 									</div>
 									<div class="column one">
-										<input placeholder="Prepation time" type="text" name="prepT" id="prepT"
+										<input placeholder="Caloric content" type="text" name="caloric_content" id="caloric_content"
 											size="40" aria-invalid="false">
 									</div>
 									<div class="column one">
-										<input placeholder="Caloric content" type="text" name="calor" id="calor"
-											size="40" aria-invalid="false">
-									</div>
-									<div class="column one">
-										<input placeholder="Servings" type="text" name="serv" id="serv" size="40"
+										<input placeholder="Servings" type="text" name="servings" id="servings" size="40"
 											aria-invalid="false">
+									</div>
+									<div class="column one">
+										<textarea placeholder="ingredients" name="ingredients"
+											id="ingredients" style="width:100%;" rows="10"
+											aria-invalid="false"></textarea>
 									</div>
 									<div class="column one">
 										<textarea placeholder="Cooking instructions" name="cookInstruct"

@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Manet1234",
-    "database": "passport_demo",
+    "password": "",
+    "database": "wikifoodia",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
