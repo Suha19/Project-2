@@ -70,33 +70,33 @@
 							<h2>Send your recipe</h2>
 							<hr class="no_line" style="margin: 0 auto 20px">
 							<div id="contactWrapper">
-								<form id="contactform">
+								<form id="contactform" enctype="multipart/form-data">
 
-									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Recipe name" type="text" name="name" id="name" size="40"
+										<input placeholder="Recipe name" type="text" name="recName" id="recName" size="40"
 											aria-required="true" aria-invalid="false">
 									</div>
-									<!-- One Second (1/2) Column -->
 									<div class="column one">
-										<input placeholder="Recipe descriptions" type="text" name="descrip" id="descrip"
+										<input placeholder="Recipe descriptions" type="text" name="recDescrip" id="recDescrip"
 											size="40" aria-required="true" aria-invalid="false">
 									</div>
+									
 									<div class="column one">
-										<input placeholder="Ingredients" type="text" name="ingrdts" id="ingrdts"
+										<input placeholder="Prepation time" type="text" name="prep_time" id="prep_time"
 											size="40" aria-invalid="false">
 									</div>
 									<div class="column one">
-										<input placeholder="Prepation time" type="text" name="prepT" id="prepT"
+										<input placeholder="Caloric content" type="text" name="caloric_content" id="caloric_content"
 											size="40" aria-invalid="false">
 									</div>
 									<div class="column one">
-										<input placeholder="Caloric content" type="text" name="calor" id="calor"
-											size="40" aria-invalid="false">
-									</div>
-									<div class="column one">
-										<input placeholder="Servings" type="text" name="serv" id="serv" size="40"
+										<input placeholder="Servings" type="text" name="servings" id="servings" size="40"
 											aria-invalid="false">
+									</div>
+									<div class="column one">
+										<textarea placeholder="ingredients" name="ingredients"
+											id="ingredients" style="width:100%;" rows="10"
+											aria-invalid="false"></textarea>
 									</div>
 									<div class="column one">
 										<textarea placeholder="Cooking instructions" name="cookInstruct"
