@@ -33,7 +33,9 @@ $(document).ready(function() {
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
-      if(err.status === 401) //login error
+      if(err.status === 401) {
+        console.log('Password Incorrect')
+      }
     });
   }
 
