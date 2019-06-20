@@ -12,7 +12,7 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     console.log("hi")
     console.log(req.user);
-    res.json("/members");
+    res.json(req.user.id);
   });
   // app.post("/api/login", function (req, res) {
 
@@ -30,8 +30,10 @@ module.exports = function (app) {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
-    }).then(function () {
+    }).then(function (data) {
+      // console.log(data);
       res.redirect(307, "/api/login");
+      // res.json(data.id);
     }).catch(function (err) {
       // console.log(err);
       // res.json(err);
