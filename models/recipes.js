@@ -8,8 +8,9 @@ module.exports = function (sequelize, DataTypes) {
     servings: DataTypes.STRING,
     ingredients: DataTypes.STRING,
     cooking_instructions: DataTypes.STRING,
-    meal_images: DataTypes.STRING,
+    meal_image: DataTypes.STRING,
     recipe_type: DataTypes.ENUM("Breakfast", "Lunch", "Dinner")
+    
    
   });
 

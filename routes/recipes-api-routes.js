@@ -14,7 +14,7 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.users
-    db.recipe.findAll({
+    db.Recipe.findAll({
       where: query,
       include: [db.users]
     }).then(function(dbrecipe) {
@@ -38,11 +38,11 @@ module.exports = function(app) {
   });
 
   // recipe route for saving a new recipe
-  // app.recipe("/api/recipe", function(req, res) {
-  //   db.recipe.create(req.body).then(function(dbrecipe) {
-  //     res.json(dbrecipe);
-  //   });
-  // });
+  app.post("/api/recipe", function(req, res) {
+    db.Recipes.create(req.body).then(function(dbrecipe) {
+      res.json(dbrecipe);
+    });
+  });
 
   // DELETE route for deleting recipe
   app.delete("/api/recipe/:id", function(req, res) {
