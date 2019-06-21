@@ -2,18 +2,6 @@ $(document).ready(function() {
   /* global moment */
 
   
-  function postRecipe(mealType) {
-    
-      var mealTypeString = mealType || "";
-      if (mealTypeString) {
-        mealTypeString = "/mealType/" + mealTypeString;
-      }
-      $.get("/api/recipes" + mealTypeString, function(data) {
-        console.log("recipes", data);
-        recipes = data;
-       
-      });
-    }
   
     $.get("/api/recipes" , function(data) {
      
@@ -25,7 +13,7 @@ $(document).ready(function() {
         $("#servings").text(data.ingredients);
         $("#cookInstruct").text(data.cooking_instructions);
         $("#mealType").text(data.recipe_type);
-        $("#avatar").text(data.meal_images);
+        $("#image").text(data.meal_images);
        
       console.log("recipes", data);
       recipes = data;
@@ -36,7 +24,7 @@ $(document).ready(function() {
     
     event.preventDefault();
 
-    // Don't do anything if the name fields hasn't been filled out
+ 
     var recipe = {
       name_of_meal: $("#recName").val(),
       descriptions:$("#recDescrip").val(),
@@ -46,7 +34,7 @@ $(document).ready(function() {
       servings:$("#servings").val(),
       cooking_instructions:$("#cookInstruct").val(),
       recipe_type:$("#mealType").val(),
-      meal_image:$("#avatar").val(),
+      meal_image:$("#image").val(),
       UserId: localStorage.getItem("userID")
     }
 

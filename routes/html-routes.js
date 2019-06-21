@@ -7,16 +7,16 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // =============================================================
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-
-  // index route loads home.html
+  // index route loads home
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    // res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.render("home")
   });
 
-  // recipe route loads allrecipe.html
+  // recipe route loads allrecipe
   app.get("/allRecipe", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/allRecipes.html"));
+    // res.sendFile(path.join(__dirname, "../public/allRecipes.html"));
+    res.render("allRecipe")
   });
 
   // add recipe route loads add recipe.html
@@ -38,31 +38,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  // app.get("/signup", function(req, res) {
-  //   res.send("signup page goes here")
-  // });
-
-  // app.get("/", function(req, res) {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/signup.html"));
-  // });
-
-  // app.get("/login", function(req, res) {
-  //   // If the user already has an account send them to the members page
-  //   if (req.user) {
-  //     res.redirect("/members");
-  //   }
-  //   res.sendFile(path.join(__dirname, "../public/login.html"));
-  // });
-
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
-  // });
+ 
 
 };
 

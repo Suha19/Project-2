@@ -21,7 +21,7 @@ CREATE TABLE recipe(
     name_of_meal VARCHAR(100),
     descriptions VARCHAR (1000),
     prep_time VARCHAR(100),
-    caloric_content VARCHAR(100),
+    caloric_content INT,
     servings VARCHAR(100),
     ingredients VARCHAR (1000), 
     cooking_instructions VARCHAR(1000),

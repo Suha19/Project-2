@@ -12,8 +12,7 @@
 	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
 	<title>WikiFoodia<i class="far fa-hat-chef"></i></title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -48,13 +47,13 @@
 				<!--BreadCrumbs area-->
 				<ul class="breadcrumbs">
 					<li>
-						<a href="home.html">Home</a><span><i class="icon-right-open"></i></span>
+						<a href="/">Home</a><span><i class="icon-right-open"></i></span>
 					</li>
 					<li>
-						<a href="recipe.html">All Recipes</a><i class="icon-right-open"></i></span>
+						<a href="/api/recipe">All Recipes</a><i class="icon-right-open"></i></span>
 					</li>
 					<li>
-						<a href="chefs.html">Add Recipe</a>
+						<a href="#">Add Recipe</a>
 					</li>
 				</ul>
 			</div>
@@ -110,17 +109,21 @@
 											aria-invalid="false">
 									</div>
 									<div class="column one">
+											<input placeholder="image" type="text" name="image" id="image" size="40"
+												aria-invalid="false">
+										</div>
+									<!-- <div class="column one">
 										<textarea placeholder="ingredients" name="ingredients"
 											id="ingredients" style="width:100%;" rows="10"
 											aria-invalid="false"></textarea>
-									</div>
+									</div> -->
 									<div class="column one">
 										<textarea placeholder="Cooking instructions" name="cookInstruct"
 											id="cookInstruct" style="width:100%;" rows="10"
 											aria-invalid="false"></textarea>
 									</div>
 									<!-- <label for="avatar">Add Meal Image:</label> -->
-									<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+									<!-- <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> -->
 									<div class="column one">
 										<label for="mealType">Select Meal Type:</label>
 										<select class="custom-select" id="mealType">
@@ -168,15 +171,24 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
 		var storage = firebase.storage();
+		
 		$(document).ready(function () {
-			$('input').on('change', function (event) {
-				const file = event.target.files[0];
-				const fileName = file.name;
-				const storageRef = storage.ref(`/${fileName}`);
-				storageRef.put(file).then(function (snapshot) {
-					console.log(snapshot.val());
-				});
-			});
+			// $('input').on('change', function (event) {
+			// 	const file = event.target.files[0];
+			// 	const fileName = file.name;
+			// 	const storageRef = storage.ref(`/${fileName}`);
+			// 	storageRef.put(file).then(function (snapshot) {
+			// 		console.log(snapshot.val());
+			// 	});
+			// });
+			$("#addRecipe").click(function (event) {
+				event.preventDefault();
+
+				const file = $("#avatar").val();
+				console.log(file);
+
+				
+			})
 		});
 	</script>
 
