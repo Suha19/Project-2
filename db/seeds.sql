@@ -1,7 +1,7 @@
 INSERT INTO users (user_name, email, password) VALUES ("Tori", "tori@hotmail.com", "123qwe");
 INSERT INTO recipe_type (meal_type) VALUES ("Breakfast"), ("Lunch"), ("Dinner");
 INSERT INTO recipe (name_of_meal, descriptions, prep_time, caloric_content, servings, ingredients, cooking_instructions, user_id, recipe_type_id) VALUES (
-"Heather's Grilled Salmon", "An easy delicious way to grill salmon. This also reheats nicely for lunches the next day!", "10 m", "380 calories", "4 servings", 
+"Heather's Grilled Salmon", "An easy delicious way to grill salmon. This also reheats nicely for lunches the next day!", "10 m", 380, 4, 
 "1/4 cup brown sugar, 1/4 cup olive oil, 1/4 cup soy sauce, 2 teaspoons lemon pepper, 1 teaspoon dried thyme, 1 teaspoon dried basil, 1 teaspoon dried parsley, 
 1/2 teaspoon garlic powder, 4 (6 ounce) salmon fillets", 
 "Whisk together the brown sugar, olive oil, soy sauce, lemon pepper, 
@@ -19,7 +19,7 @@ Pepper and salt (to taste)
 2 medium onions
 3 Knorr cubes
 2 teaspoons thyme
-2 teaspoons curry powder (Nigerian curry powder)", "45 minutes", "250 calories", "4 servings", "PREPARATION
+2 teaspoons curry powder (Nigerian curry powder)", "45 minutes", 250, 4, "PREPARATION
 In a blender, combine tomatoes, scotch bonnet pepper and onions; purée. Pour out half the purée into a bowl; set aside. Add the bell peppers to the purée remaining in the blender and pulse until smooth. Add to the mixture that was set aside and stir to combine.
 Heat vegetable oil in a large pot over medium heat. Add blended vegetables along with the salt, curry powder, ground chile pepper, garlic powder, onion powder, bay leaves, ginger and thyme. Bring mixture to a boil.
 Stir in the rice until well mixed, then reduce the heat to low.
@@ -42,7 +42,7 @@ Stock fish
 2 red onions
 2 small stock cubes
 2 tablespoons locust beans (iru)
-Salt & Habanero / Scotch Bonnet peppers (to taste)", "45 minutes", "180 calories", "4 servings", "Before you cook Efo Riro
+Salt & Habanero / Scotch Bonnet peppers (to taste)", "45 minutes", 180, 4, "Before you cook Efo Riro
 If you are using the hard stock fish, soak it for a few hours. Soak the dry fish till soft and debone.
 Cut the leafy vegetables
 Deseed the tatashe and grind till coarse.
@@ -73,7 +73,7 @@ INSERT INTO recipe (name_of_meal, descriptions, ingredients, prep_time, caloric_
 1 red onion
 Habanero peppers (to your taste)
 4 small seasoning cubes
-Salt (to your taste)", "30 minutes", "200 calories", "4 servings", "PREPARATION. Before you prepare Seafood Okra Soup
+Salt (to your taste)", "30 minutes", 200, 4, "PREPARATION. Before you prepare Seafood Okra Soup
 Clean the fish and then cut them into sizeable pieces.
 Clean and de-vein the shrimps.
 Hand cut or grate the okra, you can also use a blender if you prefer a smoother consistency.
@@ -140,8 +140,8 @@ INSERT INTO recipe (name_of_meal, descriptions, ingredients, prep_time, caloric_
 2 avocados, halved
 Fresh cilantro leaves",
 "120 minutes",
-"1000 calories",
-"4 servings",
+1000,
+4,
 "PREPARATION:
 Step 1
 Prepare the Chicharrones: Place pork belly on a rimmed baking sheet. Stir together salt, sugar and cumin; rub evenly on pork. Wrap pork in plastic wrap, and chill 6 to 12 hours.
@@ -200,8 +200,8 @@ INSERT INTO recipe (name_of_meal, descriptions, ingredients, prep_time, caloric_
 1/2 teaspoon hot pepper sauce
 1/4 teaspoon freshly ground black pepper",
 "30 minutes",
-"331 calories",
-"6 servings",
+331,
+6,
 "PREPARATION: 
 Step 1
 Heat 1 1/2 teaspoons oil in a large Dutch oven over medium-high heat. Add half of chicken; cook 5 minutes, browning on all sides. Remove chicken from pan. Repeat procedure with remaining oil and chicken. Remove from pan; cover and keep warm.
@@ -240,8 +240,8 @@ Filling:
 ¼ teaspoon black pepper
 ½ pound ground pork and beef",
 "60 minutes",
-"120 calories",
-"20 servings",
+120,
+20,
 "PREPARATION: 
 To prepare the dough:Place the masarepa in a large bowl. Add the sazon Goya and salt and stir to mix well. Add the water and oil and mix to form dough. Pat the dough into a ball and knead for 2 minutes or until smooth. Cover with plastic and set aside for 20 minutes.
 Meanwhile, to make the filling, cook the potatoes in a pot with water and the bouillon tablet for 20-25 minutes or until tender. Drain and gently mash the potatoes. Set aside.
