@@ -8,12 +8,16 @@ var session = require("express-session");
 var app = express();
 var passport = require('passport');
 var PORT = process.env.PORT || 1100;
-
+var exphbs = require("express-handlebars");
 // Sets up the Express app to handle data parsing
 // =============================================================
 app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // app.use(bodyParser.json());
 
 // Static directory

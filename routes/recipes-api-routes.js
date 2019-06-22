@@ -11,22 +11,22 @@ module.exports = function(app) {
     if (req.query.user_id) {
       query.userID = req.query.user_id;
     }
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.users
-    db.Recipe.findAll({
-      where: query,
-      include: [db.users]
+   
+    db.Recipes.findAll({
+      // where: query,
+      // include: [db.users]
     }).then(function(dbrecipe) {
-      res.json(dbrecipe);
+      var hbsRecipes ={
+        recipes: dbrecipe
+      }
+      // res.json(dbrecipe);
+      res.render("allRecipe", hbsRecipes )
     });
   });
 
   // Get route for retrieving a single recipe
   app.get("/api/recipe/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.users
+   
     db.recipe.findOne({
       where: {
         id: req.params.id
