@@ -26,8 +26,8 @@ CREATE TABLE recipe(
     ingredients VARCHAR (1000), 
     cooking_instructions VARCHAR(1000),
     meal_images VARCHAR (200),
-    user_id INT,
-	recipe_type_id INT,
+    user_id INTEGER,
+	recipe_type_id INTEGER,
 	PRIMARY KEY(id),
 	FOREIGN KEY (user_id) REFERENCES users (id),
 	FOREIGN KEY (recipe_type_id) REFERENCES recipe_type (id)
